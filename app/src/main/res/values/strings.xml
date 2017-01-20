@@ -8,10 +8,13 @@
     <string name="new_game">New Game</string>
     <string name="high_score">HIGH SCORE</string>
     <string name="score">SCORE</string>
+    <string name="save">Save </string>
+    <string name="cancel">Cancel </string>
+
     <string name="instructions">&#160;&#160;Join the numbers and get to the 2048 title.</string>
     <string name="you_win">You Win!</string>
     <string name="game_over">Game Over!</string>
-    <string name="dialog_game_over">Game \n Over!</string>
+    <string name="dialog_game_over">Game \nOver !</string>
     <string name="dialog_high_score">High Score:</string>
     <string name="dialog_score">Score:</string>
     <string name="go_on">Tap to Continue</string>
@@ -19,6 +22,22 @@
     <string name="endless">"Endless" Mode</string>
     <string name="supportEmail">samir.brave@gmail.com22</string>
     <string name="shared_body_text">I just scored  %1$s in 2048. Get it here:</string>
+    <string name="shared_app_text">Study shows mind games improve memory. Try the best strategy game :</string>
+    <string name="shared_link">https://play.google.com/store/apps/details?id=com.presto.p2048</string>
+    <string name="how_to_play_title">HOW TO PLAY</string>
+    <string name="how_to_play_Description">Swipe using your fingers to move the tiles. \n When two tiles with the same number touch, they merge into one</string>
+    <string name="how_to_play">How to Play</string>
+    <string name="saved_game">Saved Game</string>
+    <string name="no_saved_game">You don\'t have any saved game</string>
+
+    <string name="dialog_save_game_title">Save \ncurrent Game</string>
+    <string name="dialog_save_game_description">Save the state of current \ngame to play it later</string>
+    <string name="dialog_save_game_name_placeholder">By what name you want to save? </string>
+    <string name="dialog_save_game_loader_message">Saving current game... </string>
+    <string name="dialog_save_game_error_empty_name">name can not be empty</string>
+    <string name="dialog_save_game_error_invalid_name">name is invalid </string>
+    <string name="dialog_save_game_error_count_limit">Can not save more than %1$s games. Please delete few</string>
+
     <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
     <string name="banner_ad_unit_id_prod">ca-app-pub-4500312007040018/5755052081</string>
 </resources>

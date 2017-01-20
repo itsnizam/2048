@@ -4,11 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.presto.p2048.activities.MainActivity;
 
 public class ContextHolder {
 
     static Context mApplicationContext;
-    static Activity mMainActivity;
+    static MainActivity mMainActivity;
     static FirebaseAnalytics mFirebaseAnalytics;
 
     public static void setApplicationContext(Context applicationContext) {
@@ -20,7 +21,7 @@ public class ContextHolder {
     }
 
 
-    public static void setMainActivity(Activity activity) {
+    public static void setMainActivity(MainActivity activity) {
         mMainActivity = activity;
     }
 
@@ -32,7 +33,7 @@ public class ContextHolder {
         return mFirebaseAnalytics;
     }
 
-    public static Context getMainActivity() {
+    public static MainActivity getMainActivity() {
         return mMainActivity;
     }
 }

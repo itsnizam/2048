@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.presto.p2048.MainGame;
 import com.presto.p2048.R;
-import com.presto.p2048.firebase.FireBaseHelper;
+import com.presto.p2048.firebase.TelemetryHelper;
 
 public class GameOverDialog extends Dialog implements View.OnClickListener {
     MainGame mGame;
@@ -23,7 +23,7 @@ public class GameOverDialog extends Dialog implements View.OnClickListener {
     }
 
     protected void onCreate(Bundle savedInstanceState) {
-        FireBaseHelper.logEvent("GameOverDialog", "on_create");
+        TelemetryHelper.logEvent("GameOverDialog", "on_create");
         isVisible = true;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_game_over);
@@ -48,7 +48,7 @@ public class GameOverDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        FireBaseHelper.logEvent("GameOverDialog", "onClick", "" + v.getId());
+        TelemetryHelper.logEvent("GameOverDialog", "onClick", "" + v.getId());
         if (v.getId() == R.id.leaderBoardButt) {
             mGame.showLeaderBoard();
         } else if (v.getId() == R.id.feedbackButt) {
@@ -67,7 +67,7 @@ public class GameOverDialog extends Dialog implements View.OnClickListener {
     }
 
     private void shareScore() {
-        FireBaseHelper.logEvent("GameOverDialog", "shareScore");
+        TelemetryHelper.logEvent("GameOverDialog", "shareApp");
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
 

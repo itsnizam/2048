@@ -1,0 +1,139 @@
+------------------------------------------------------------------------------------------------
+possible simple solution don't create views everytime in MainActivity. reuse it
+------------------------------------------------------------------------------------------------
+
+11-20 21:14:15.386 6199-6199/? D/MainActivity: ************************ oncreate started
+11-20 21:14:15.386 6199-6199/? V/FA: onActivityCreated
+11-20 21:14:15.396 6199-6301/? I/FeedbackSenderTask:  doInBackground cleanUpTask = true
+11-20 21:14:15.396 6199-6301/? I/FeedbackSenderTask:  doInBackground lastSentCounter = 0, lastMailCounter = 0
+11-20 21:14:15.406 6199-6215/? D/FA: Logging event (FE): _e, Bundle[{_o=auto, _si=-222244179560994149, _et=1095, _sc=SavedGamesActivity}]
+11-20 21:14:15.416 1191-1191/? E/WVMExtractor: Failed to open libwvm.so
+11-20 21:14:15.446 6199-6199/? W/GooglePlayServicesUtil: Google Play Store is missing.
+11-20 21:14:15.446 6199-6199/? I/Ads: Starting ad request.
+11-20 21:14:15.456 6199-6199/? D/MainActivity: ************************ oncreate Ended
+11-20 21:14:15.466 1191-3257/? E/WVMExtractor: Failed to open libwvm.so
+11-20 21:14:15.496 1191-1641/? E/WVMExtractor: Failed to open libwvm.so
+11-20 21:14:15.516 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 1024K, 1% free 245108K/247367K, paused 7ms, total 7ms
+11-20 21:14:15.516 6199-6199/? I/dalvikvm-heap: Grow heap (frag case) to 245.717MB for 6570732-byte allocation
+11-20 21:14:15.516 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 34K, 1% free 251490K/253831K, paused 5ms, total 5ms
+11-20 21:14:15.536 1191-3257/? E/WVMExtractor: Failed to open libwvm.so
+11-20 21:14:15.536 6199-6215/? E/FA: Name must start with a letter. Type, name: event param, 0
+11-20 21:14:15.536 6199-6215/? D/FA: Logging event (FE): app_open, Bundle[{_o=app, _ev=0, time=1479656655397, _err=3, _el=1}]
+11-20 21:14:15.576 6199-6202/? D/dalvikvm: GC_CONCURRENT freed 56K, 1% free 252051K/253831K, paused 12ms+13ms, total 58ms
+11-20 21:14:15.586 6199-6199/? D/dalvikvm: WAIT_FOR_CONCURRENT_GC blocked 33ms
+11-20 21:14:15.586 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 18K, 1% free 252404K/254215K, paused 6ms, total 6ms
+11-20 21:14:15.596 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 5K, 1% free 252947K/254599K, paused 6ms, total 6ms
+11-20 21:14:15.596 1191-1191/? E/WVMExtractor: Failed to open libwvm.so
+11-20 21:14:15.606 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed <1K, 1% free 253312K/254983K, paused 5ms, total 5ms
+11-20 21:14:15.606 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 7K, 1% free 253674K/255367K, paused 5ms, total 5ms
+11-20 21:14:15.616 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 2K, 1% free 254039K/255751K, paused 5ms, total 5ms
+11-20 21:14:15.616 6199-6199/? I/dalvikvm-heap: Grow heap (frag case) to 252.096MB for 4112796-byte allocation
+11-20 21:14:15.626 1191-6585/? E/MP3Extractor: Unable to resync. Signalling end of stream.
+11-20 21:14:15.626 6199-6215/? D/dalvikvm: GC_FOR_ALLOC freed <1K, 1% free 258055K/259783K, paused 15ms, total 15ms
+11-20 21:14:15.636 6199-6215/? E/FA: Name must start with a letter. Type, name: event param, 0
+11-20 21:14:15.636 6199-6215/? D/FA: Logging event (FE): app_open, Bundle[{_o=app, _ev=0, time=1479656655461, _err=3, _el=1}]
+11-20 21:14:15.646 6199-6202/? D/dalvikvm: GC_CONCURRENT freed 7K, 1% free 258064K/259783K, paused 1ms+2ms, total 12ms
+11-20 21:14:15.646 6199-6199/? D/dalvikvm: WAIT_FOR_CONCURRENT_GC blocked 8ms
+11-20 21:14:15.656 6199-6199/? D/dalvikvm: GC_FOR_ALLOC freed 3K, 1% free 258061K/259783K, paused 7ms, total 7ms
+11-20 21:14:15.656 6199-6199/? I/dalvikvm-heap: Forcing collection of SoftReferences for 4112796-byte allocation
+11-20 21:14:15.656 6199-6199/? D/dalvikvm: GC_BEFORE_OOM freed <1K, 1% free 258061K/259783K, paused 5ms, total 5ms
+11-20 21:14:15.656 6199-6199/? E/dalvikvm-heap: Out of memory on a 4112796-byte allocation.
+11-20 21:14:15.656 6199-6199/? I/dalvikvm: "main" prio=5 tid=1 RUNNABLE
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:   | group="main" sCount=0 dsCount=0 obj=0xa668d450 self=0xb91934e0
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:   | sysTid=6199 nice=0 sched=0/0 cgrp=[fopen-error:2] handle=-1216715712
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:   | schedstat=( 0 0 0 ) utm=289 stm=824 core=4
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.graphics.Bitmap.nativeCreate(Native Method)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.graphics.Bitmap.createBitmap(Bitmap.java:640)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.graphics.Bitmap.createBitmap(Bitmap.java:620)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at com.presto.p2048.MainView.createOverlays(MainView.java:526)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at com.presto.p2048.MainView.onSizeChanged(MainView.java:149)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.setFrame(View.java:13840)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13752)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13754)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13754)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.FrameLayout.onLayout(FrameLayout.java:448)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13754)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13754)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.widget.FrameLayout.onLayout(FrameLayout.java:448)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.View.layout(View.java:13754)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewRootImpl.performLayout(ViewRootImpl.java:1868)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1689)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1000)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:4214)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.Choreographer$CallbackRecord.run(Choreographer.java:725)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.Choreographer.doCallbacks(Choreographer.java:555)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.Choreographer.doFrame(Choreographer.java:525)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:711)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.os.Handler.handleCallback(Handler.java:615)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.os.Handler.dispatchMessage(Handler.java:92)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.os.Looper.loop(Looper.java:137)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at android.app.ActivityThread.main(ActivityThread.java:4745)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at java.lang.reflect.Method.invokeNative(Native Method)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at java.lang.reflect.Method.invoke(Method.java:511)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:786)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:553)
+11-20 21:14:15.656 6199-6199/? I/dalvikvm:     at dalvik.system.NativeStart.main(Native Method)
+11-20 21:14:15.656 6199-6199/? D/AndroidRuntime: Shutting down VM
+11-20 21:14:15.656 6199-6199/? W/dalvikvm: threadid=1: thread exiting with uncaught exception (group=0xa668c228)
+11-20 21:14:15.676 6199-6199/? E/AndroidRuntime: FATAL EXCEPTION: main
+                                                 java.lang.OutOfMemoryError
+                                                     at android.graphics.Bitmap.nativeCreate(Native Method)
+                                                     at android.graphics.Bitmap.createBitmap(Bitmap.java:640)
+                                                     at android.graphics.Bitmap.createBitmap(Bitmap.java:620)
+                                                     at com.presto.p2048.MainView.createOverlays(MainView.java:526)
+                                                     at com.presto.p2048.MainView.onSizeChanged(MainView.java:149)
+                                                     at android.view.View.setFrame(View.java:13840)
+                                                     at android.view.View.layout(View.java:13752)
+                                                     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+                                                     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+                                                     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+                                                     at android.view.View.layout(View.java:13754)
+                                                     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+                                                     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+                                                     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+                                                     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+                                                     at android.view.View.layout(View.java:13754)
+                                                     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+                                                     at android.widget.FrameLayout.onLayout(FrameLayout.java:448)
+                                                     at android.view.View.layout(View.java:13754)
+                                                     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+                                                     at android.widget.LinearLayout.setChildFrame(LinearLayout.java:1649)
+                                                     at android.widget.LinearLayout.layoutVertical(LinearLayout.java:1507)
+                                                     at android.widget.LinearLayout.onLayout(LinearLayout.java:1420)
+                                                     at android.view.View.layout(View.java:13754)
+                                                     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+                                                     at android.widget.FrameLayout.onLayout(FrameLayout.java:448)
+                                                     at android.view.View.layout(View.java:13754)
+                                                     at android.view.ViewGroup.layout(ViewGroup.java:4364)
+                                                     at android.view.ViewRootImpl.performLayout(ViewRootImpl.java:1868)
+                                                     at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1689)
+                                                     at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1000)
+                                                     at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:4214)
+                                                     at android.view.Choreographer$CallbackRecord.run(Choreographer.java:725)
+                                                     at android.view.Choreographer.doCallbacks(Choreographer.java:555)
+                                                     at android.view.Choreographer.doFrame(Choreographer.java:525)
+                                                     at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:711)
+                                                     at android.os.Handler.handleCallback(Handler.java:615)
+                                                     at android.os.Handler.dispatchMessage(Handler.java:92)
+                                                     at android.os.Looper.loop(Looper.java:137)
+                                                     at android.app.ActivityThread.main(ActivityThread.java:4745)
+                                                     at java.lang.reflect.Method.invokeNative(Native Method)
+                                                     at java.lang.reflect.Method.invoke(Method.java:511)
+                                                     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:786)
+                                                     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:553)
+                                                     at dalvik.system.NativeStart.main(Native Method)
+11-20 21:14:15.676 1434-1634/system_process W/ActivityManager:   Force finishing activity com.presto.p2048/.activities.MainActivity

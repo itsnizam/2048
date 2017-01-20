@@ -4,7 +4,7 @@ import android.content.Intent;
 
 import com.presto.p2048.ContextHolder;
 import com.presto.p2048.R;
-import com.presto.p2048.firebase.FireBaseHelper;
+import com.presto.p2048.firebase.TelemetryHelper;
 
 /**
  * Created by haniza on 11/14/2016.
@@ -12,7 +12,7 @@ import com.presto.p2048.firebase.FireBaseHelper;
 
 public class Util {
     static public void shareScore(long score, long highScore) {
-        FireBaseHelper.logEvent("GameOverDialog", "shareScore");
+        TelemetryHelper.logEvent("GameOverDialog", "shareApp");
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
 

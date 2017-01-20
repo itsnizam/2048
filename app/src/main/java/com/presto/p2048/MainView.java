@@ -10,9 +10,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import java.util.ArrayList;
+import com.presto.p2048.activities.MainActivity;
 
-import com.presto.p2048.R;
+import java.util.ArrayList;
 
 public class MainView extends View {
 
@@ -47,7 +47,7 @@ public class MainView extends View {
     private Drawable undoIcon;
     private Drawable soundIcon;
     private Drawable muteIcon;
-    private Drawable leaderboardIcon;
+    private Drawable saveGame;
     private Drawable feedBackIcon;
     private Drawable shareIcon;
     //	private Drawable cheatIcon;
@@ -244,10 +244,10 @@ public class MainView extends View {
     }
 
 
-    private void drawLeaderboardButton(Canvas canvas) {
+    private void drawSaveGameButton(Canvas canvas) {
         drawDrawable(canvas, backgroundRectangle, sXLeaderboard, sYIcons, sXLeaderboard
                 + iconSize, sYIcons + iconSize);
-        drawDrawable(canvas, leaderboardIcon, sXLeaderboard + iconPaddingSize, sYIcons
+        drawDrawable(canvas, saveGame, sXLeaderboard + iconPaddingSize, sYIcons
                 + iconPaddingSize, sXLeaderboard + iconSize - iconPaddingSize, sYIcons
                 + iconSize - iconPaddingSize);
     }
@@ -492,7 +492,7 @@ public class MainView extends View {
         drawSoundButton(canvas);
         drawNewGameButton(canvas, false);
         drawUndoButton(canvas);
-        drawLeaderboardButton(canvas);
+        drawSaveGameButton(canvas);
         drawFeedbackButton(canvas);
         drawShareButton(canvas);
         drawBackground(canvas);
@@ -673,7 +673,7 @@ public class MainView extends View {
             undoIcon = resources.getDrawable(R.drawable.ic_action_undo);
             soundIcon = resources.getDrawable(R.drawable.sound);
             muteIcon = resources.getDrawable(R.drawable.mute);
-            leaderboardIcon = resources.getDrawable(R.drawable.leaderboard);
+            saveGame = resources.getDrawable(R.drawable.saved);
             feedBackIcon = resources.getDrawable(R.drawable.feedback);
             shareIcon = resources.getDrawable(R.drawable.share_icon);
             //cheatIcon = resources.getDrawable(R.drawable.ic_action_cheat);
@@ -697,7 +697,6 @@ public class MainView extends View {
 
     public void showLeaderBoard() {
         mainActivity.showLeaderBoard();
-
     }
 
     public void updateLeaderBoard() {
@@ -705,6 +704,6 @@ public class MainView extends View {
     }
 
     public void shareScore(){
-        mainActivity.shareScore();
+        mainActivity.shareApp();
     }
 }

@@ -1,15 +1,13 @@
 package com.presto.p2048;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.preference.PreferenceManager;
 
 import com.presto.p2048.dialog.GameOverDialog;
-import com.presto.p2048.firebase.FireBaseHelper;
-import com.presto.p2048.rating.RatingDialog;
+import com.presto.p2048.dialog.RatingDialog;
+import com.presto.p2048.dialog.SaveGameDialog;
+import com.presto.p2048.util.SavedGameHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -86,10 +84,10 @@ public class MainGame {
             grid.clearGrid();
         }
         aGrid = new AnimationGrid(numSquaresX, numSquaresY);
-        highScore = getHighScore();
+        highScore = SavedGameHelper.getHighScore(mContext);
         if (score >= highScore) {
             highScore = score;
-            recordHighScore();
+            SavedGameHelper.recordHighScore(mContext, highScore);
         }
         score = 0;
         gameState = GAME_NORMAL;
@@ -119,20 +117,6 @@ public class MainGame {
                 SPAWN_ANIMATION_TIME, MOVE_ANIMATION_TIME, null); // Direction:
         // -1 =
         // EXPANDING
-    }
-
-    private void recordHighScore() {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(mContext);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putLong(HIGH_SCORE, highScore);
-        editor.commit();
-    }
-
-    private long getHighScore() {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(mContext);
-        return settings.getLong(HIGH_SCORE, -1);
     }
 
     private void prepareTiles() {
@@ -322,7 +306,7 @@ public class MainGame {
                 NOTIFICATION_ANIMATION_TIME, NOTIFICATION_DELAY_TIME, null);
         if (score >= highScore) {
             highScore = score;
-            recordHighScore();
+            SavedGameHelper.recordHighScore(mContext, highScore);
         }
     }
 
@@ -344,7 +328,6 @@ public class MainGame {
         if (vector.getX() == 1) {
             Collections.reverse(traversals);
         }
-
         return traversals;
     }
 
@@ -465,8 +448,15 @@ public class MainGame {
         ratingDialog.show();
     }
 
+    public void showSaveGameDialog() {
+        if (SaveGameDialog.isVisible)
+            return;
+        SaveGameDialog saveGame = new SaveGameDialog(ContextHolder.getMainActivity(), this);
+        saveGame.show();
+    }
+
     public void showGameOverDialog(boolean gameOver) {
-        if(GameOverDialog.isVisible)
+        if (GameOverDialog.isVisible)
             return;
         GameOverDialog customizeDialog = new GameOverDialog(ContextHolder.getMainActivity(), this);
         customizeDialog.show();

@@ -5,8 +5,7 @@ import android.content.DialogInterface;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.presto.p2048.firebase.FireBaseHelper;
-import com.presto.p2048.util.Util;
+import com.presto.p2048.firebase.TelemetryHelper;
 
 public class InputListener implements View.OnTouchListener {
 
@@ -125,22 +124,22 @@ public class InputListener implements View.OnTouchListener {
                 // "Menu" inputs
                 if (!hasMoved) {
                     if (iconPressed(mView.sXNewGame, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_new_game", "new_game");
+                        TelemetryHelper.logEvent("button_clicked_new_game", "new_game");
                         handleNewGameIconPress();
                     } else if (iconPressed(mView.sXUndo, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_undo", "undo");
+                        TelemetryHelper.logEvent("button_clicked_undo", "undo");
                         mView.game.revertUndoState();
                     } else if (iconPressed(mView.sXSound, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_sound", "sound");
+                        TelemetryHelper.logEvent("button_clicked_sound", "sound");
                         mView.game.toggleSound();
                     } else if (iconPressed(mView.sXLeaderboard, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_leaderboard", "leaderboard");
-                        mView.game.showLeaderBoard();
+                        TelemetryHelper.logEvent("button_clicked_save_game", "save");
+                        mView.game.showSaveGameDialog();
                     } else if (iconPressed(mView.sXFeedback, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_rating", "rating");
+                        TelemetryHelper.logEvent("button_clicked_rating", "rating");
                         mView.game.showRateDialog();
                     } else if (iconPressed(mView.sXShare, mView.sYIcons)) {
-                        FireBaseHelper.logEvent("button_clicked_share", "share");
+                        TelemetryHelper.logEvent("button_clicked_share", "share");
                         mView.shareScore();
                     } else if (isTap(2)
                             && inRange(mView.startingX, x, mView.endingX)
