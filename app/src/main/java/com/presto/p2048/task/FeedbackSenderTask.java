@@ -36,6 +36,7 @@ public class FeedbackSenderTask extends AsyncTask<Void, Void, Boolean> {
     private String mailhost = "smtp.gmail.com";
     private String userName = "test123232223232@gmail.com";
     private String pwd = "";
+	
     private final String MAIL_SUBJECT_FEEDBACK = "2048 feedback";
     private String mailBody = "";
     private boolean cleanUpTask = false;
