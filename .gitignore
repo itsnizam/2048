@@ -1,0 +1,14 @@
+.idea/
+.gradle/
+build/
+/.idea/*
+/.gradle/*
+/build/*
+*/.idea/*
+*/.gradle/*
+*/build/*
+
+
+.idea
+build
+android/2048_java/.gradle/*
